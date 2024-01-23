@@ -1,0 +1,34 @@
+<!-- bridge_administration_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ object.name }} - Bridge Administration Details
+{% endblock title %}
+
+{% block content %}
+    <h1>Bridge Administration Details</h1>
+
+    <div>
+        <strong>ID:</strong> {{ object.id }}
+    </div>
+    <div>
+        <strong>Name:</strong> {{ object.name }}
+    </div>
+    <div>
+        <strong>Location:</strong> {{ object.location }}
+    </div>
+    <div>
+        <strong>RIS Index:</strong> {{ object.ris_index }}
+    </div>
+    <div>
+        <strong>VILD Location:</strong> {{ object.vild_location }}
+    </div>
+
+    <a href="{% url 'bridge_administration_update' object.id %}">Edit</a> |
+    <a href="{% url 'bridge_administration_delete' object.id %}">Delete</a>
+
+    <hr>
+
+    <a href="{% url 'bridge_administration_list' %}">Back to List</a>
+{% endblock content %}

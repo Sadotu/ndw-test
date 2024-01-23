@@ -1,0 +1,20 @@
+<!-- bridge_administration_form.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if object %}Edit{% else %}Create{% endif %} Bridge Administration
+{% endblock title %}
+
+{% block content %}
+    <h1>{% if object %}Edit{% else %}Create{% endif %} Bridge Administration</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Save">
+    </form>
+
+    <a href="{% url 'bridge_administration_list' %}">Cancel</a>
+{% endblock content %}

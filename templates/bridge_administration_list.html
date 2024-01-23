@@ -1,0 +1,12 @@
+<!-- bridge_administration_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Bridge Administrations</h2>
+  <ul>
+    {% for administration in bridge_administrations %}
+      <li>{{ administration.name }} - {{ administration.location }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,20 @@
+<!-- bridge_administration_confirm_delete.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Confirm Deletion
+{% endblock title %}
+
+{% block content %}
+    <h1>Confirm Deletion</h1>
+
+    <p>Are you sure you want to delete the Bridge Administration "{{ object.name }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+
+    <a href="{% url 'bridge_administration_detail' object.id %}">Cancel</a>
+{% endblock content %}
